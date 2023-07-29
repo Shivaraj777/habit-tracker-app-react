@@ -1,0 +1,46 @@
+.detailView{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addHabitBtn{
+    height: 3rem;
+    width: 8em;
+    margin-top: 2rem;
+    color: whitesmoke;
+    background-color: rgb(247, 165, 12);
+    border: none;
+    border-radius: 8px;
+}
+
+.addHabitBtn:hover{
+    cursor: pointer;
+    background-color: rgb(247, 135, 12);
+}
+
+.habit{
+    width: 100%;
+    margin-top: 2rem;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.habitActions{
+    width: 7em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.habitActions i{
+    padding-top: 15px;
+    color:maroon;
+    font-size: 25px;
+}
