@@ -1,0 +1,11 @@
+.nav {
+    color: whitesmoke;
+    background: black;
+    height: 70px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
