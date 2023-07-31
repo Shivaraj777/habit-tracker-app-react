@@ -3,6 +3,7 @@ import styles from '../styles/AddHabitModal.module.css';
 import { connect } from 'react-redux';
 import { addHabit, closeAddHabitModal } from '../actions';
 import { toast } from 'react-toastify';
+import { appendDay, appendYear, appendMonth } from '../utilities';
 
 let id = 0;
 
@@ -15,14 +16,14 @@ function AddHabitModal(props) {
 
   const saveHabit = () => {
     if(habitName === ''){
-      return;
+      return toast.error('Habbit cannot be blank!');
     }
 
-    const date = new Date()
+    const date = new Date();
     const day = date.getDate() - date.getDay();
     const month = date.getMonth();
     const year = date.getFullYear();
-    console.log(date, day, month, year);
+    // console.log(date, day, month, year);
 
     // create a habit
     const habit = {
@@ -32,62 +33,63 @@ function AddHabitModal(props) {
         {
           id: 0,
           day: "Sunday",
-          dd:day,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day, month, year),
+          mm: appendMonth(day, month, year),
+          yyyy: appendYear(day, month, year),
           isDone: "",
         },
         {
           id: 1,
           day: "Monday",
-          dd:day+1,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day+1, month, year),
+          mm: appendMonth(day+1, month, year),
+          yyyy: appendYear(day+1, month, year),
           isDone: "",
         },
         {
           id: 2,
           day: "Tuesday",
-          dd:day+2,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day+2, month, year),
+          mm: appendMonth(day+2, month, year),
+          yyyy: appendYear(day+2, month, year),
           isDone: "",
         },
         {
           id: 3,
           day: "Wednesday",
-          dd:day+3,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day+3, month, year),
+          mm: appendMonth(day+3, month, year),
+          yyyy: appendYear(day+3, month, year),
           isDone: "",
         },
         {
           id: 4,
           day: "Thursday",
-          dd:day+4,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day+4, month, year),
+          mm: appendMonth(day+4, month, year),
+          yyyy: appendYear(day+4, month, year),
           isDone: "",
         },
         {
           id: 5,
           day: "Friday",
-          dd:day+5,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day+5, month, year),
+          mm: appendMonth(day+5, month, year),
+          yyyy: appendYear(day+5, month, year),
           isDone: "",
         },
         {
           id: 6,
           day: "Saturday",
-          dd:day+6,
-          mm:month,
-          yyyy:year,
+          dd: appendDay(day+6, month, year),
+          mm: appendMonth(day+6, month, year),
+          yyyy: appendYear(day+6, month, year),
           isDone: "",
         },
       ],
     }
 
+    console.log(habit);
     props.dispatch(addHabit(habit));
     props.dispatch(closeAddHabitModal(false));
     toast.success('Habit added successfully!');

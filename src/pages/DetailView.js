@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import styles from '../styles/DetailView.module.css';
 import { connect } from 'react-redux';
-import { showAddHabitModal } from '../actions';
+import { deleteHabit, showAddHabitModal } from '../actions';
 import AddHabitModal from '../components/AddHabitModal';
+import { toast } from 'react-toastify';
 
 export class DetailView extends Component {
 
@@ -10,10 +11,15 @@ export class DetailView extends Component {
     this.props.dispatch(showAddHabitModal(true));
   }
 
+  handleDeleteHabit = (habitId) => {
+    this.props.dispatch(deleteHabit(habitId));
+    toast.success('Habbit deleted successfully');
+  }
+
   render() {
     const showAddHabitModal = this.props.showModal;
     const habits = this.props.habits ? this.props.habits : [];
-    console.log(showAddHabitModal);
+    // console.log(showAddHabitModal);
     // console.log(this.props);
 
     return (
@@ -28,7 +34,7 @@ export class DetailView extends Component {
             </div>
             <div className={styles.habitActions}>
               <p>action</p>
-              <i className="fa-solid fa-trash" />
+              <i className="fa-solid fa-trash" onClick={() => {this.handleDeleteHabit(habit.id)}} />
             </div>
           </div>
         ))}

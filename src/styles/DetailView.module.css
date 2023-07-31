@@ -44,3 +44,7 @@
     color:maroon;
     font-size: 25px;
 }
+
+.habitActions i:hover{
+    cursor: pointer;
+}
