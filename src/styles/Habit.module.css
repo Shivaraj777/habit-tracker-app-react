@@ -1,0 +1,33 @@
+.habit{
+    height: 4rem;
+    width: 80%;
+    margin-top: 2rem;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.habitActions{
+    width: 9em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#fav{
+    color: rgb(237, 226, 226);
+}
+
+.habitActions i{
+    padding-top: 15px;
+    color:maroon;
+    font-size: 25px;
+}
+
+.habitActions i:hover{
+    cursor: pointer;
+}

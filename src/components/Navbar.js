@@ -1,13 +1,13 @@
 import React from 'react';
-import '../styles/Navbar.css';
+import styles from '../styles/Navbar.module.css';
 
 function Navbar() {
   return (
-    <div className='nav'>
-      <div className='nav-left'>
+    <div className={styles.nav}>
+      <div className={styles.navLeft}>
         <span>Habit Tracker</span>
       </div>
-      <div className='nav-right'>
+      <div className={styles.navRight}>
 
       </div>
     </div>

@@ -1,19 +1,14 @@
 import React, { Component } from 'react'
 import styles from '../styles/DetailView.module.css';
 import { connect } from 'react-redux';
-import { deleteHabit, showAddHabitModal } from '../actions';
+import { showAddHabitModal } from '../actions';
 import AddHabitModal from '../components/AddHabitModal';
-import { toast } from 'react-toastify';
+import Habit from '../components/Habit';
 
 export class DetailView extends Component {
 
   handleAddHabit = (e) => {
     this.props.dispatch(showAddHabitModal(true));
-  }
-
-  handleDeleteHabit = (habitId) => {
-    this.props.dispatch(deleteHabit(habitId));
-    toast.success('Habbit deleted successfully');
   }
 
   render() {
@@ -28,15 +23,7 @@ export class DetailView extends Component {
         {showAddHabitModal && <AddHabitModal /> }
 
         {habits.map((habit, index) => (
-          <div className={styles.habit} key={index}>
-            <div className='habit-details'>
-              <p>{habit.name}</p>
-            </div>
-            <div className={styles.habitActions}>
-              <p>action</p>
-              <i className="fa-solid fa-trash" onClick={() => {this.handleDeleteHabit(habit.id)}} />
-            </div>
-          </div>
+          <Habit habit={habit} key={index} />
         ))}
       </div>
     );
