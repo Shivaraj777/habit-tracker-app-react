@@ -1,0 +1,60 @@
+.modalOverlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.26);
+  }
+  
+  .modalContent {
+    height: 40%;
+    width: 35%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contentHeader{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .contentHeader i{
+    color: red;
+  }
+  
+  .contentHeader i:hover{
+    cursor: pointer;
+  }
+  
+  .contentBody{
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .contentBody input{
+    height: 2em;
+    width: 80%;
+  }
+  
+  .contentBody button{
+    color: whitesmoke;
+    background-color: rgb(247, 165, 12);
+    margin-top: 15px;
+    height: 3em;
+    width: 8em;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .contentBody button:hover{
+    cursor: pointer;
+    background-color: rgb(247, 135, 12);
+  }
+  

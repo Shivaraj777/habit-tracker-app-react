@@ -89,7 +89,7 @@ function AddHabitModal(props) {
       ],
     }
 
-    console.log(habit);
+    // console.log(habit);
     props.dispatch(addHabit(habit));
     props.dispatch(closeAddHabitModal(false));
     toast.success('Habit added successfully!');
