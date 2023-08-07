@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/AddHabitModal.module.css';
 import { connect } from 'react-redux';
-import { addHabit, closeAddHabitModal } from '../actions';
+import { addHabit, showAddHabitModal } from '../actions';
 import { toast } from 'react-toastify';
 import { appendDay, appendYear, appendMonth, formatDate } from '../utilities';
 
@@ -11,7 +11,7 @@ function AddHabitModal(props) {
   const [habitName, setHabitName] = useState('');
 
   const closeModal = () => {
-    props.dispatch(closeAddHabitModal(false));
+    props.dispatch(showAddHabitModal(false));
   };
 
   const saveHabit = () => {
@@ -92,7 +92,7 @@ function AddHabitModal(props) {
 
     console.log(habit);
     props.dispatch(addHabit(habit));
-    props.dispatch(closeAddHabitModal(false));
+    props.dispatch(showAddHabitModal(false));
     toast.success('Habit added successfully!');
   }
 

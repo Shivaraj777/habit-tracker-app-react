@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import styles from '../styles/SetHabitStatusModal.module.css';
-import { closeSetStatusModal, setStatusToDone, setStatusToNone, setStatusToNotDone } from '../actions';
+import { setStatusToDone, setStatusToNone, setStatusToNotDone, showSetStatusModal } from '../actions';
 import { toast } from 'react-toastify';
 
 function SetHabitStatusModal(props) {
@@ -18,12 +18,12 @@ function SetHabitStatusModal(props) {
       props.dispatch(setStatusToNotDone(dayId));
     }
 
-    props.dispatch(closeSetStatusModal(false));
+    props.dispatch(showSetStatusModal(false));
     toast.success('Status updated successfully');
   }
 
   const closeModal = () => {
-    props.dispatch(closeSetStatusModal(false));
+    props.dispatch(showSetStatusModal(false));
   };
 
   return (

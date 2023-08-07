@@ -2,9 +2,7 @@
 export const ADD_HABIT = 'ADD_HABIT';
 export const DELETE_HABIT = 'DELETE_HABIT';
 export const SHOW_ADD_HABIT_MODAL = 'SHOW_ADD_HABIT_MODAL';
-export const CLOSE_ADD_HABIT_MODAL = 'CLOSE_ADD_HABIT_MODAL';
 export const SHOW_SET_STATUS_MODAL = 'SHOW_SET_STATUS_MODAL';
-export const CLOSE_SET_STATUS_MODAL = 'CLOSE_SET_STATUS_MODAL';
 export const HABIT_STATUS_NONE = 'HABIT_STATUS_NONE';
 export const HABIT_STATUS_DONE = 'HABIT_STATUS_DONE';
 export const HABIT_STATUS_NOTDONE = 'HABIT_STATUS_NOTDONE';
@@ -25,7 +23,7 @@ export const deleteHabit = (habitId) => {
   }
 }
 
-// action creator to show the add habit modal
+// action creator to show/close the add habit modal
 export const showAddHabitModal = (showModal) => {
   return {
     type: SHOW_ADD_HABIT_MODAL,
@@ -33,26 +31,10 @@ export const showAddHabitModal = (showModal) => {
   }
 }
 
-// action creator to close the add habit modal
-export const closeAddHabitModal = (showModal) => {
-  return {
-    type: CLOSE_ADD_HABIT_MODAL,
-    showModal
-  }
-}
-
-// action creator to show the set habit status modal
+// action creator to show/close the set habit status modal
 export const showSetStatusModal = (showModal) => {
   return {
     type: SHOW_SET_STATUS_MODAL,
-    showModal
-  }
-}
-
-// action creator to close the set habit status modal
-export const closeSetStatusModal = (showModal) => {
-  return {
-    type: CLOSE_SET_STATUS_MODAL,
     showModal
   }
 }

@@ -1,4 +1,4 @@
-import { ADD_HABIT, CLOSE_ADD_HABIT_MODAL, CLOSE_SET_STATUS_MODAL, DELETE_HABIT, HABIT_STATUS_DONE, HABIT_STATUS_NONE, HABIT_STATUS_NOTDONE, SHOW_ADD_HABIT_MODAL, SHOW_SET_STATUS_MODAL, SHOW_WEEK_VIEW } from "../actions";
+import { ADD_HABIT, DELETE_HABIT, HABIT_STATUS_DONE, HABIT_STATUS_NONE, HABIT_STATUS_NOTDONE, SHOW_ADD_HABIT_MODAL, SHOW_SET_STATUS_MODAL, SHOW_WEEK_VIEW } from "../actions";
 
 // set the initial state for habits
 const initialHabitState = {
@@ -27,25 +27,13 @@ export function habits(state = initialHabitState, action){
     case SHOW_ADD_HABIT_MODAL:
       return{
         ...state,
-        showModal: true
-      }
-
-    case CLOSE_ADD_HABIT_MODAL:
-      return{
-        ...state,
-        showModal: false
+        showModal: action.showModal
       }
 
     case SHOW_SET_STATUS_MODAL:
       return{
         ...state,
-        showModal: true
-      }
-
-    case CLOSE_SET_STATUS_MODAL:
-      return{
-        ...state,
-        showModal: false
+        showModal: action.showModal
       }
 
     case SHOW_WEEK_VIEW:

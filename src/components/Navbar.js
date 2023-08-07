@@ -19,10 +19,10 @@ function Navbar(props) {
       <div className={styles.navRight}>
         {showWeekView ? 
           <Link to='/'>
-            <p onClick={() => toggleView(!showWeekView)}>Go To Detail view</p>
+            <p onClick={() => toggleView(false)}>Go To Detail view</p>
           </Link> : 
           <Link to='/week-view'>
-            <p onClick={() => toggleView(!showWeekView)}>Go to Week view</p>
+            <p onClick={() => toggleView(true)}>Go to Week view</p>
           </Link>
         }
       </div>
