@@ -1,5 +1,5 @@
 .habit{
-    height: 4rem;
+    height: 7rem;
     width: 80%;
     margin-top: 2rem;
     box-sizing: border-box;
@@ -9,10 +9,26 @@
     flex-direction: row;
     justify-content: space-between;
     border: 1px solid black;
+    background-image: linear-gradient(to right, #FFD194, #D1913C);
+}
+
+.habitDetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.habitDetails p{
+    color: rgb(9, 9, 103);
+    font-size: large;
+    font-weight: 700;
+}
+
+.habitDetails span{
+    color: rgb(82, 80, 80);
 }
 
 .habitActions{
-    width: 9em;
+    width: 5em;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,7 +39,7 @@
 }
 
 .habitActions i{
-    padding-top: 15px;
+    padding-top: 40px;
     color:maroon;
     font-size: 25px;
 }

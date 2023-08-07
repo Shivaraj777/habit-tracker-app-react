@@ -3,7 +3,7 @@ import styles from '../styles/AddHabitModal.module.css';
 import { connect } from 'react-redux';
 import { addHabit, closeAddHabitModal } from '../actions';
 import { toast } from 'react-toastify';
-import { appendDay, appendYear, appendMonth } from '../utilities';
+import { appendDay, appendYear, appendMonth, formatDate } from '../utilities';
 
 let id = 0;
 
@@ -29,6 +29,7 @@ function AddHabitModal(props) {
     const habit = {
       id: id++,
       name: habitName,
+      createdDateTime : formatDate(date),
       weekLog: [
         {
           id: 0,
@@ -89,7 +90,7 @@ function AddHabitModal(props) {
       ],
     }
 
-    // console.log(habit);
+    console.log(habit);
     props.dispatch(addHabit(habit));
     props.dispatch(closeAddHabitModal(false));
     toast.success('Habit added successfully!');
