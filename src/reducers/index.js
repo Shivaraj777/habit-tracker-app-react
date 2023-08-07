@@ -1,9 +1,10 @@
-import { ADD_HABIT, CLOSE_ADD_HABIT_MODAL, CLOSE_SET_STATUS_MODAL, DELETE_HABIT, HABIT_STATUS_DONE, HABIT_STATUS_NONE, HABIT_STATUS_NOTDONE, SHOW_ADD_HABIT_MODAL, SHOW_SET_STATUS_MODAL } from "../actions";
+import { ADD_HABIT, CLOSE_ADD_HABIT_MODAL, CLOSE_SET_STATUS_MODAL, DELETE_HABIT, HABIT_STATUS_DONE, HABIT_STATUS_NONE, HABIT_STATUS_NOTDONE, SHOW_ADD_HABIT_MODAL, SHOW_SET_STATUS_MODAL, SHOW_WEEK_VIEW } from "../actions";
 
 // set the initial state for habits
 const initialHabitState = {
     habits: [],
-    showModal: false
+    showModal: false,
+    showWeekView: false
 }
 
 // habits reducer
@@ -45,6 +46,12 @@ export function habits(state = initialHabitState, action){
       return{
         ...state,
         showModal: false
+      }
+
+    case SHOW_WEEK_VIEW:
+      return{
+        ...state,
+        showWeekView: action.showWeekView
       }
 
     case HABIT_STATUS_NONE:

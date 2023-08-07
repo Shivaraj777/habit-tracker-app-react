@@ -26,4 +26,20 @@
     color: whitesmoke;
     font-size: larger;
   }
+
+  .navRight p{
+    height: 2.5rem;
+    width: 9em;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(247, 165, 12);;
+  }
+
+  .navRight p:hover{
+    cursor: pointer;
+    background-color: rgb(247, 135, 12);
+  }
   

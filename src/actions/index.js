@@ -8,6 +8,7 @@ export const CLOSE_SET_STATUS_MODAL = 'CLOSE_SET_STATUS_MODAL';
 export const HABIT_STATUS_NONE = 'HABIT_STATUS_NONE';
 export const HABIT_STATUS_DONE = 'HABIT_STATUS_DONE';
 export const HABIT_STATUS_NOTDONE = 'HABIT_STATUS_NOTDONE';
+export const SHOW_WEEK_VIEW = 'SHOW_WEEK_VIEW';
 
 // add habit action creator
 export const addHabit = (habit) => {
@@ -77,5 +78,13 @@ export const setStatusToNotDone = (dayId) => {
   return {
     type: HABIT_STATUS_NOTDONE,
     dayId
+  }
+}
+
+// action creator to toggle views
+export const goToWeekView = (showWeekView) => {
+  return {
+    type: SHOW_WEEK_VIEW,
+    showWeekView
   }
 }

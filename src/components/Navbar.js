@@ -1,18 +1,39 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styles from '../styles/Navbar.module.css';
+import { connect } from 'react-redux';
+import { goToWeekView } from '../actions';
 
-function Navbar() {
+function Navbar(props) {
+  const {showWeekView} = props;
+
+  const toggleView = (showWeekView) => {
+    props.dispatch(goToWeekView(showWeekView));
+  }
+
   return (
     <div className={styles.nav}>
       <div className={styles.navLeft}>
-        <Link to='/'>Habit Tracker</Link>
+        Habit Tracker
       </div>
       <div className={styles.navRight}>
-        <Link to='/week-view'>Week view</Link>
+        {showWeekView ? 
+          <Link to='/'>
+            <p onClick={() => toggleView(!showWeekView)}>Go To Detail view</p>
+          </Link> : 
+          <Link to='/week-view'>
+            <p onClick={() => toggleView(!showWeekView)}>Go to Week view</p>
+          </Link>
+        }
       </div>
     </div>
   )
 }
 
-export default Navbar;
+function mapStateToProps(state){
+  return state;
+}
+
+const ConnectedNavbarComponent = connect(mapStateToProps)(Navbar);
+
+export default ConnectedNavbarComponent;
