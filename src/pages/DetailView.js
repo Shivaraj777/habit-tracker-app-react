@@ -12,7 +12,7 @@ export class DetailView extends Component {
   }
 
   render() {
-    const {showAddHabitModal} = this.props;
+    const showAddHabitModal = this.props.showModal;
     const habits = this.props.habits ? this.props.habits : [];
     // console.log(showAddHabitModal);
     // console.log(this.props);

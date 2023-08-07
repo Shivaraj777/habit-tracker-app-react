@@ -22,7 +22,8 @@ export class HabbitWeekView extends Component {
   }
 
   render() {
-    const {habit, showSetStatusModal} = this.props;
+    const {habit, showModal} = this.props;
+    const showSetStatusModal = showModal;
 
     return (
       <div className={styles.habitContainer}>

@@ -3,8 +3,7 @@ import { ADD_HABIT, CLOSE_ADD_HABIT_MODAL, CLOSE_SET_STATUS_MODAL, DELETE_HABIT,
 // set the initial state for habits
 const initialHabitState = {
     habits: [],
-    showAddHabitModal: false,
-    showSetStatusModal: false
+    showModal: false
 }
 
 // habits reducer
@@ -27,25 +26,25 @@ export function habits(state = initialHabitState, action){
     case SHOW_ADD_HABIT_MODAL:
       return{
         ...state,
-        showAddHabitModal: true
+        showModal: true
       }
 
     case CLOSE_ADD_HABIT_MODAL:
       return{
         ...state,
-        showAddHabitModal: false
+        showModal: false
       }
 
     case SHOW_SET_STATUS_MODAL:
       return{
         ...state,
-        showSetStatusModal: true
+        showModal: true
       }
 
     case CLOSE_SET_STATUS_MODAL:
       return{
         ...state,
-        showSetStatusModal: false
+        showModal: false
       }
 
     case HABIT_STATUS_NONE:
