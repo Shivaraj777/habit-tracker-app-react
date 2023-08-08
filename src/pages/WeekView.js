@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import styles from '../styles/WeekView.module.css';
 import { connect } from 'react-redux';
-import HabbitWeekView from '../components/HabbitWeekView';
+import HabitWeekView from '../components/HabitWeekView';
 
+// WeekView component
 export class WeekView extends Component {
   render() {
     const {habits} = this.props;
@@ -21,9 +22,10 @@ export class WeekView extends Component {
           <div>Sat</div>
         </div>
 
+        {/* Habits container */}
         <div className={styles.habitsContainer}>
           {habits.map((habit, index) => (
-            <HabbitWeekView habit={habit} key={index} />
+            <HabitWeekView habit={habit} key={index} />
           ))}
         </div>
       </div>
@@ -39,4 +41,5 @@ function mapStateToProps(state){
 // connect component to store
 const connectedWeekViewComponent = connect(mapStateToProps)(WeekView);
 
+// export the component
 export default connectedWeekViewComponent;

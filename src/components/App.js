@@ -5,6 +5,12 @@ import {Routes, Route} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import WeekView from "../pages/WeekView";
 
+/*  
+  Routes and Route component from react-router-dom package 
+  is used to navigate to Detail View and WeekView
+*/
+
+// App component
 function App() {
   return (
     <div className="App">
@@ -18,4 +24,5 @@ function App() {
   );
 }
 
+// export App component
 export default App;

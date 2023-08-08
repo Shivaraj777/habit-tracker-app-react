@@ -5,14 +5,21 @@ import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { getCompletedDaysCount } from '../utilities';
 
+// Habit component of Detail view
 export class Habit extends Component {
+
+  // handle deleting a habit
   handleDeleteHabit = (habitId) => {
-    this.props.dispatch(deleteHabit(habitId));
-    toast.success('Habbit deleted successfully');
+    try{
+      this.props.dispatch(deleteHabit(habitId)); //dispatch action to delete a habit
+      toast.success('Habbit deleted successfully'); //success notification
+    }catch(e){
+      toast.error('Error in deleting habit'); //error notification
+    }
   }
 
   render() {
-    const {habit} = this.props;
+    const {habit} = this.props; //get habit from props
     // console.log(this.props);
 
     return (
@@ -36,6 +43,8 @@ function mapStateToProps(state){
   return state;
 }
 
+// connect component with store
 const connectedHabitComponent = connect(mapStateToProps)(Habit);
 
+// export the component
 export default connectedHabitComponent;

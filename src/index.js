@@ -10,6 +10,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 //creating the store
 const store = createStore(habits);
 
+// create root element of app and render it
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

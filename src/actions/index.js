@@ -16,6 +16,7 @@ export const addHabit = (habit) => {
   }
 }
 
+// delete habit action creator
 export const deleteHabit = (habitId) => {
   return {
     type: DELETE_HABIT,

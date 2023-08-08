@@ -1,27 +1,36 @@
 import React, { Component } from 'react';
-import styles from '../styles/WeekView.module.css';
-import SetHabitStatusModal from '../components/SetHabitStatusModal';
+import styles from '../styles/HabitWeekView.module.css';
+import SetHabitStatusModal from './SetHabitStatusModal';
 import { connect } from 'react-redux';
 import { showSetStatusModal } from '../actions';
 import '../styles/imageStyle.css';
 import { toast } from 'react-toastify';
 import { getCompletedDaysCount } from '../utilities';
 
-export class HabbitWeekView extends Component {
 
+// HabitWeekView component displays the weekly status of each habit
+export class HabitWeekView extends Component {
+
+  // handle set status operation
   handleSetStatus = (habitId, day) => {
-    const today = new Date();
-    const date = new Date(day.yyyy, day.mm-1, day.dd);
+    const today = new Date(); //get today's date
+    const date = new Date(day.yyyy, day.mm-1, day.dd); //get habit day which has to be updated
+
+    // if habit date is greater than current date, don't update habit status
     if(date > today){
       return toast.error('You cannot change next days status!');
     }
 
-    localStorage.setItem('habit-id', habitId);
-    localStorage.setItem('habit-day-id', day.id);
+    // store the contents of habit to be updated in LS
+    localStorage.setItem('habit-id', habitId); //store habit id in local storage
+    localStorage.setItem('habit-day-id', day.id); //store the habit day id in local storage
+
+    // dispatch action to show setStatus modal
     this.props.dispatch(showSetStatusModal(true));
   }
 
   render() {
+    // get the state from props
     const {habit, showModal} = this.props;
     const showSetStatusModal = showModal;
 
@@ -35,6 +44,8 @@ export class HabbitWeekView extends Component {
             <i id={styles.fav} className="fa-solid fa-star"></i>
           </div>
         </div>
+
+        {/* days container */}
         <div className={styles.daysContainer}>
           {habit.weekLog.map((day, index) => (
               <div key={index} onClick={() => this.handleSetStatus(habit.id, day)}>
@@ -45,16 +56,21 @@ export class HabbitWeekView extends Component {
               </div>
           ))}
         </div>
+
+        {/* modal component */}
         {showSetStatusModal && <SetHabitStatusModal />}
       </div>
     )
   }
 }
 
+// callback function to access the store state
 function mapStateToProps(state){
   return state;
 }
 
-const ConnectedHabitWeekViewComponent = connect(mapStateToProps)(HabbitWeekView);
+// connect component to store
+const ConnectedHabitWeekViewComponent = connect(mapStateToProps)(HabitWeekView);
 
+// export the component
 export default ConnectedHabitWeekViewComponent;

@@ -4,24 +4,34 @@ import styles from '../styles/SetHabitStatusModal.module.css';
 import { setStatusToDone, setStatusToNone, setStatusToNotDone, showSetStatusModal } from '../actions';
 import { toast } from 'react-toastify';
 
+// SetHabitStatusModal component used in Week view
 function SetHabitStatusModal(props) {
-  const [habitStatus, setHabitStatus] = useState('None');
+  const [habitStatus, setHabitStatus] = useState('None'); //state to set the status of each day
 
+  // handle updating the habit status for a day
   const handleUpdateStatus = () => {
     console.log(habitStatus);
-    const dayId = localStorage.getItem('habit-day-id');
-    if(habitStatus === 'None'){
-      props.dispatch(setStatusToNone(dayId));
-    }else if(habitStatus === 'Done'){
-      props.dispatch(setStatusToDone(dayId));
-    }else{
-      props.dispatch(setStatusToNotDone(dayId));
-    }
 
-    props.dispatch(showSetStatusModal(false));
-    toast.success('Status updated successfully');
+    try{
+      const dayId = localStorage.getItem('habit-day-id'); //ge habit day id from local storage
+
+      // dispatch appropriate action bases on selected status
+      if(habitStatus === 'None'){
+        props.dispatch(setStatusToNone(dayId)); //update to none
+      }else if(habitStatus === 'Done'){
+        props.dispatch(setStatusToDone(dayId)); //update to done
+      }else{
+        props.dispatch(setStatusToNotDone(dayId)); //update to not done
+      }
+
+      props.dispatch(showSetStatusModal(false)); //close the modal
+      toast.success('Status updated successfully'); //success notification
+    }catch(e){
+      toast.error('Error in updating habit status of selected day'); //error notification
+    }
   }
 
+  // handle closing the modal
   const closeModal = () => {
     props.dispatch(showSetStatusModal(false));
   };
@@ -47,10 +57,13 @@ function SetHabitStatusModal(props) {
   )
 }
 
+// callback function to access state from store
 function mapStateToProps(state){
   return state;
 }
 
+// connect component to store
 const ConnectedSetHabitStatusModalComponent = connect(mapStateToProps)(SetHabitStatusModal);
 
+// export the component
 export default ConnectedSetHabitStatusModalComponent;

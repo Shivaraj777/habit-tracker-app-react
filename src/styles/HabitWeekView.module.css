@@ -1,0 +1,84 @@
+/* week View habit container */
+.habitContainer{
+    width: 100%;
+    /* margin-top: 4rem; */
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.habitDetails{
+    height: 3.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 25px;
+    border-bottom: 1px solid black;
+    background-color: rgb(232, 197, 109);
+}
+
+.habitName{
+    color: rgb(222, 16, 16);
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.sideInfo{
+    width: 17em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-right: 30px;
+}
+
+.sideInfo i{
+    color: whitesmoke;
+    font-size: large;
+}
+
+.sideInfo i:hover{
+    cursor: pointer;
+}
+
+/* Habit days container */
+.daysContainer{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(245, 224, 172);
+}
+
+.daysContainer div{
+    height: 8rem;
+    width: 14.28%;
+    box-sizing: border-box;
+    padding-right: 2px;
+    border-right: 1px solid black;
+}
+
+.daysContainer div:hover{
+    cursor: pointer;
+    background-color: rgb(245, 212, 172);
+}
+
+.daysContainer div span{
+    display: block;
+    width: 100%;
+    text-align: end;
+}
+
+.daysContainer i{
+    font-size: 500%;
+    padding-left: 20%;
+}
+
+
+/* Media queries */
+@media screen and (max-width:630px){
+    .daysContainer i{
+        font-size: 300%;
+    }
+}

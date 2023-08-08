@@ -20,10 +20,12 @@ export const appendYear = (day, month, year) => {
   return date.getFullYear(); 
 }
 
+// function to padd zeros
 export const padZero = (number) => {
   return number.toString().padStart(2, "0");
 }
 
+// convert date to mm/dd/yyy hh:mm format
 export const formatDate = (date) => {
   const day = date.getDate().toString().padStart(2, "0");
   const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -42,6 +44,7 @@ export const formatDate = (date) => {
   return `${month}/${day}/${year} ${hours}:${padZero(minutes)}${period}`;
 }
 
+// fetch the completed tasks for a habit 
 export const getCompletedDaysCount = (habit, count) => {
   for(let i=0;i<habit.weekLog.length;i++){
     if(habit.weekLog[i].isDone === true){

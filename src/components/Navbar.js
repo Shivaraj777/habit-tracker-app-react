@@ -4,11 +4,13 @@ import styles from '../styles/Navbar.module.css';
 import { connect } from 'react-redux';
 import { goToWeekView } from '../actions';
 
+// Navbar component
 function Navbar(props) {
-  const {showWeekView} = props;
+  const {showWeekView} = props; //to toggle between views
 
+  // handle switching views
   const toggleView = (showWeekView) => {
-    props.dispatch(goToWeekView(showWeekView));
+    props.dispatch(goToWeekView(showWeekView)); 
   }
 
   return (
@@ -30,10 +32,13 @@ function Navbar(props) {
   )
 }
 
+// callback function to get state from store
 function mapStateToProps(state){
   return state;
 }
 
+// connect component to store
 const ConnectedNavbarComponent = connect(mapStateToProps)(Navbar);
 
+// export the component
 export default ConnectedNavbarComponent;

@@ -1,3 +1,4 @@
+/* Detail View page container */
 .detailView{
     display: flex;
     flex-direction: column;
@@ -5,6 +6,7 @@
     align-items: center;
 }
 
+/* Add Habit button */
 .addHabitBtn{
     height: 3rem;
     width: 8em;
