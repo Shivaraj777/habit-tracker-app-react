@@ -114,7 +114,7 @@ function AddHabitModal(props) {
         </div>
         <div className={styles.contentBody}>
           <label>Habit name</label>
-          <input type='text' value={habitName} onChange={(e) => {setHabitName(e.target.value)}}/>
+          <input type='text' value={habitName} onChange={(e) => {setHabitName(e.target.value)}} placeholder='Add new habit'/>
           <button onClick={saveHabit}>Save Habit</button>
         </div>
       </div>

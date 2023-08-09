@@ -1,61 +1,89 @@
 /* AddHabitModal overlay styling */
 .modalOverlay {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Modal content */
 .modalContent {
-  height: 40%;
-  width: 35%;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 40%;
+    width: 35%;
+    color: whitesmoke;
+    background-image: linear-gradient(to right,rgba(33,24,75,.82) 0%,#112c67 100%);;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .contentHeader{
-  display:flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .contentHeader i{
-  color: red;
+    color: red;
+    font-size: larger;
 }
 
 .contentHeader i:hover{
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .contentBody{
-  display:flex;
-  flex-direction: column;
+    display:flex;
+    flex-direction: column;
 }
 
 .contentBody input{
-  height: 2em;
-  width: 80%;
+    height: 2rem;
+    width: 80%;
+    padding-left: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contentBody input:focus{
+    outline: none;
 }
 
 .contentBody button{
-  color: whitesmoke;
-  background-color: rgb(247, 165, 12);
-  margin-top: 15px;
-  height: 3em;
-  width: 8em;
-  border: none;
-  border-radius: 6px;
+    color: whitesmoke;
+    font-size: large;
+    background-color: rgb(247, 165, 12);
+    margin-top: 15px;
+    height: 2.6em;
+    width: 8em;
+    border: none;
+    border-radius: 6px;
 }
 
 .contentBody button:hover{
-  cursor: pointer;
-  background-color: rgb(247, 135, 12);
+    cursor: pointer;
+    background-color: rgb(247, 135, 12);
+}
+
+
+/* Media queries */
+@media screen  and (max-width:576px) {
+    .modalContent{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:360px){
+    .modalContent{
+        width: 50%;
+    }
+
+    .contentBody button{
+        width: 6em;
+    }
 }

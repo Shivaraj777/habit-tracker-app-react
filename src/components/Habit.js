@@ -30,7 +30,6 @@ export class Habit extends Component {
           <span>Completed: {getCompletedDaysCount(habit, 0)}/7 days</span>
         </div>
         <div className={styles.habitActions}>
-          <i id={styles.fav} className="fa-solid fa-star"></i>
           <i className="fa-solid fa-trash" onClick={() => {this.handleDeleteHabit(habit.id)}} />
         </div>
       </div>

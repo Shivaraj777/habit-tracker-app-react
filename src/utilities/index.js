@@ -20,6 +20,12 @@ export const appendYear = (day, month, year) => {
   return date.getFullYear(); 
 }
 
+// get month name
+export const getMonthName = (monthId) => {
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return monthNames[monthId];
+}
+
 // function to padd zeros
 export const padZero = (number) => {
   return number.toString().padStart(2, "0");

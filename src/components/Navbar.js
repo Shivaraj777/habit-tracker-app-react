@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styles from '../styles/Navbar.module.css';
 import { connect } from 'react-redux';
 import { goToWeekView } from '../actions';
+import TitleIcon from '../images/lifestyle.png';
 
 // Navbar component
 function Navbar(props) {
@@ -16,7 +17,8 @@ function Navbar(props) {
   return (
     <div className={styles.nav}>
       <div className={styles.navLeft}>
-        Habit Tracker
+        <img src={TitleIcon} alt='title-icon' height='30px' width='30px' />
+        <span>Habit Tracker</span>
       </div>
       <div className={styles.navRight}>
         {showWeekView ? 

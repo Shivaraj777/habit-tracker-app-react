@@ -8,55 +8,85 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.26);
-  }
+    background-color: rgba(0, 0, 0, 0.5);
+}
   
-  /* Modal content */
-  .modalContent {
+/* Modal content */
+.modalContent {
     height: 40%;
     width: 35%;
-    background-color: #fff;
+    color: whitesmoke;
+    background-image: linear-gradient(to right,rgba(33,24,75,.82) 0%,#112c67 100%);;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .contentHeader{
+}
+
+.contentHeader{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  
-  .contentHeader i{
+}
+
+.contentHeader i{
     color: red;
-  }
-  
-  .contentHeader i:hover{
+    font-size: larger;
+}
+
+.contentHeader i:hover{
     cursor: pointer;
-  }
-  
-  .contentBody{
+}
+
+.contentBody{
     display:flex;
     flex-direction: column;
-  }
-  
-  .contentBody input{
-    height: 2em;
+}
+
+.contentBody select{
+    height: 2rem;
     width: 80%;
-  }
-  
-  .contentBody button{
+    border: none;
+    border-radius: 5px;
+}
+
+.contentBody select:focus{
+    outline: none;
+}
+
+.contentBody select option{
+    font-size: medium;
+}
+
+.contentBody button{
     color: whitesmoke;
+    font-size: large;
     background-color: rgb(247, 165, 12);
     margin-top: 15px;
-    height: 3em;
+    height: 2.6em;
     width: 8em;
     border: none;
     border-radius: 6px;
-  }
-  
-  .contentBody button:hover{
+}
+
+.contentBody button:hover{
     cursor: pointer;
     background-color: rgb(247, 135, 12);
-  }
-  
+}
+
+
+/* Media queries */
+@media screen  and (max-width:576px) {
+    .modalContent{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:360px){
+    .modalContent{
+        width: 50%;
+    }
+
+    .contentBody button{
+        width: 6em;
+    }
+}

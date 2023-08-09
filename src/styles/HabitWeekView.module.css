@@ -15,24 +15,25 @@
     box-sizing: border-box;
     padding-top: 10px;
     padding-left: 25px;
+    padding-right: 25px;
     border-bottom: 1px solid black;
     background-color: rgb(232, 197, 109);
 }
 
 .habitName{
-    color: rgb(222, 16, 16);
-    font-size: x-large;
+    color: rgb(184, 5, 5);
+    font-size: 100%;
     font-weight: 900;
 }
 
 .sideInfo{
     width: 17em;
+    font-size: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     box-sizing: border-box;
     padding-top: 5px;
-    padding-right: 30px;
 }
 
 .sideInfo i{
@@ -54,6 +55,7 @@
 .daysContainer div{
     height: 8rem;
     width: 14.28%;
+    font-weight: 500;
     box-sizing: border-box;
     padding-right: 2px;
     border-right: 1px solid black;
@@ -80,5 +82,25 @@
 @media screen and (max-width:630px){
     .daysContainer i{
         font-size: 300%;
+    }
+}
+
+@media screen and (max-width:576px){
+    .habitDetails{
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .sideInfo{
+        width: 8em;
+        justify-content: space-around;
+    }
+
+    .sideInfo span:first-child{
+        display: none;
+    }
+
+    .daysContainer i{
+        font-size: 200%;
     }
 }

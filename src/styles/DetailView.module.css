@@ -10,6 +10,7 @@
 .addHabitBtn{
     height: 3rem;
     width: 8em;
+    font-size: large;
     margin-top: 2rem;
     color: whitesmoke;
     background-color: rgb(247, 165, 12);
