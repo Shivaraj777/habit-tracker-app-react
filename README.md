@@ -68,3 +68,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Folder structure
+
+1. public folder: this folder contsinas the static html code and other image resources
+2. src: Source directory where JS code is present. Src folder contains below sub folders:
+
+src sub directories:
+1. actions: contains the JS code for action types and action creators.
+2. components: contains the JS and JSX code for all components in our react application.
+3. images: conatins images used in application.
+4. reducers: contains code for reducer functions which updates state.
+5. styles: contains css styles for the application and components.
+6. utilities: conntains utility/common functions used by application
+
+
+### Hosting
+
+Application hosted using google firestore
+App link: https://habit-tracker-react-3342a.web.app/
+
+
