@@ -79,9 +79,10 @@ src sub directories:
 1. actions: contains the JS code for action types and action creators.
 2. components: contains the JS and JSX code for all components in our react application.
 3. images: conatins images used in application.
-4. reducers: contains code for reducer functions which updates state.
-5. styles: contains css styles for the application and components.
-6. utilities: conntains utility/common functions used by application
+4. pages: conatins JS and JSX code for different pages present in app.
+5. reducers: contains code for reducer functions which updates state.
+6. styles: contains css styles for the application and components.
+7. utilities: conntains utility/common functions used by application
 
 
 ### Hosting
